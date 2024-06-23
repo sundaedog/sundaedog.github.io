@@ -1,0 +1,57 @@
+* {  /* clear defaults and possibly make defaults */
+    padding:0;
+    margin:0;
+
+    box-sizing:border-box;
+    /* font-family: ; */
+}
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: "Metropolis";
+}
+/* nav element */
+.navbar {
+    height: 50px;
+    background-color: rgb(41, 41, 41);
+    font-family: "Metropolis", monospace;
+
+    padding: 0 1.5em;               /* spaces out stuff, 0 up and down 1.5em left and right */
+    display: flex;                  
+    justify-content: space-between; 
+    align-items: center;            /* vertically */
+
+}
+
+/* "sundaedog" on the navbar */
+.logo {
+    color: white;
+    font-size:1.7em;
+}
+.logopic{
+    max-width: 0.65em;
+    border-radius: 100%;
+}
+
+/* other links on the navbar */
+.other-links ul {
+    display: flex; /* makes the things in a line */
+}
+nav li {
+    list-style: none;
+    margin: 0.6em; /* distances the li stuff */
+}
+nav li a {
+    border: 2px solid rgb(63, 63, 63);
+    border-radius: 6px;
+    transition: all 0.2s;
+    padding: 0.3em;
+}
+nav li a:hover {
+    background-color: rgb(171, 80, 157);
+    border: 2px solid rgb(171, 80, 157);
+    box-shadow: 0px 1px 10px rgb(171, 80, 157);
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
