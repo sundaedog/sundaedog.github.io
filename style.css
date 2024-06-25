@@ -175,6 +175,7 @@ h2 {
     justify-content: center;
     flex-wrap: wrap;
     background-color: rgba(41, 41, 41, 0.66);
+    image-rendering: pixelated;
 }
 .clickable-buttons a{
     display:flex;
