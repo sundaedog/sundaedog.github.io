@@ -123,3 +123,12 @@ iframe{
     display:flex;
     background-color: pink;
 }
+.blogcontentwoo a {
+    color: rgb(245, 129, 129); 
+    transition: all 0.2s;
+    display:inline-block;
+}
+.blogcontentwoo a:hover {
+    text-shadow: 1px 1px 1px rgb(121, 63, 63);
+    translate: 0px -1px;
+}
