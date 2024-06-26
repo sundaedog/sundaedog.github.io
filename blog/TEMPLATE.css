@@ -90,3 +90,23 @@ h2 {
     font-size: 1.5em;
     padding:0 0.3em;
 }
+@media screen and (max-width: 1111px) { /* change stuff when the screen is smaller */
+    h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 960px) { 
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media screen and (max-width: 856px) { 
+    .page {
+        margin: 1em 0em;
+    }
+}
+@media screen and (max-width: 773px) { 
+    .suni {
+        display:none;
+    }
+}
