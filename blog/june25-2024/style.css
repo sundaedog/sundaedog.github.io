@@ -127,10 +127,12 @@ iframe{
     color: rgb(245, 129, 129); 
     transition: all 0.2s;
     display:inline-block;
+    text-decoration: none;
 }
 .blogcontentwoo a:hover {
-    text-shadow: 1px 1px 1px rgb(121, 63, 63);
+    text-shadow: 1px 1px 0px rgb(121, 63, 63);
     translate: 0px -1px;
+    text-decoration: underline;
 }
 @media screen and (max-width: 1111px) { /* change stuff when the screen is smaller */
     h1 {
