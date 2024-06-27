@@ -69,7 +69,8 @@
 
 
 .c-timestamp {  /* timestamp */
-    color: #e1e0a8;
+    color: #28281d;
+    background-color: #e1e0a8;
     font-weight: bold;
     font-size: 1.15em;
     margin-right: 15px;
@@ -83,3 +84,9 @@
 }
 
 
+div[id='|--|6/24/2024 0:32:25'] .c-timestamp{ /* to group together multiple questions, just hide the timestamp lmao */
+    display:none;
+}
+div[id='|--|6/24/2024 0:32:25'] {   /* also maybe padding to make it look like it belongs */    
+    padding-left: 1em;
+}
