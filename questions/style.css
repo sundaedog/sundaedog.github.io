@@ -1,0 +1,29 @@
+@font-face {
+    src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
+    font-family: Afacad;
+}
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: Metropolis;
+}
+body { 
+    font-family: Afacad;
+    background-color: #28281d;
+    color: #ece9cc;
+}
+#c_widget, body h1, body p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#c_container div {
+    margin: 1.8em 0;
+    font-size: 110%;
+}
+
+.toptext h1 {
+    font-size: 2.5em
+}
+.toptext {
+    font-family: Metropolis;
+    margin-top: 1em;
+}

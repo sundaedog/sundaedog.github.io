@@ -1,0 +1,203 @@
+body {
+    background-size: 4em 4em;
+    background-image: /* tint */
+                      linear-gradient(to top, rgba(129, 129, 129, 0.75), rgba(129, 129, 129, 0.75)),
+                      /* checkered */
+                      linear-gradient(to right, rgb(0, 0, 0) 50%, white 50%),
+                      linear-gradient(to bottom, black 50%, white 50%);
+    background-blend-mode: normal, difference, normal;
+    animation: moveGrid 6s linear infinite;
+} /* todo: try to understand wtf is going on in here */
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -4em -4em;
+    }
+}   
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: "Metropolis";
+}
+@font-face {
+    src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
+    font-family: "Afacad";
+}
+
+
+.page {
+    font-family: "Metropolis";
+    color:rgb(71, 71, 71);
+    background-color:white;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 1em 10em;
+    overflow:hidden;
+}
+.intro{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(206, 206, 206);
+    border-bottom: 3px solid black;
+}
+.intro a{ /* back button*/
+    background-color: rgb(168, 168, 168);
+    border-radius: 5px;
+    text-decoration: none;
+    color:rgb(71, 71, 71);
+    overflow:hidden;
+    margin-left: 0.3em;
+    padding:0.1em;
+    transition: 0.1s;
+    font-size: 0.8em;
+}
+.intro a:hover{
+    text-shadow: 0px 0px 10px rgb(120, 120, 120);
+    padding:0.2em;
+}
+.suni {
+    width:5em;
+}
+.back {
+    margin:0;
+    font-size: 2em;
+}
+.weblogtitle { /* name of weblog */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(184, 125, 255); /* you can change this :3 silly */
+    font-size: 1.3em;
+    padding: 0.3em 0.3em;
+}
+h1 {
+    margin:0;
+    font-size: 4em;
+}
+h2 {
+    margin:0;
+}
+h2:not(.weblogtitle h2) {
+    margin-top: 2em;
+}
+.blogcontentwoo p:not(.small) {
+    margin: 0.5em 1.5em;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+.blogcontentwoo h2 {
+    border-image: linear-gradient(45deg, rgba(41, 41, 41, 0.66), rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) 1;
+    border-bottom: 3px solid;
+    font-size: 1.5em;
+    padding:0 0.3em;
+}
+@media screen and (max-width: 1111px) { /* change stuff when the screen is smaller */
+    h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 960px) { 
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media screen and (max-width: 856px) { 
+    .page {
+        margin: 1em 0em;
+    }
+}
+@media screen and (max-width: 773px) { 
+    .suni {
+        display:none;
+    }
+}
+
+
+#shake {
+    animation: shake 0.5s infinite linear;
+    display: inline-block;
+    font-style: italic;
+}
+@keyframes shake { /* thanks niko lol */
+    0% { transform: translate(1px,1px) }
+    10% { transform: translate(-1px,-1px) }
+    20% { transform: translate(-1px) }
+    30% { transform: translate(1px,1px) }
+    40% { transform: translate(1px,-1px) }
+    50% { transform: translate(-1px,2px) }
+    60% { transform: translate(-1px,1px) }
+    70% { transform: translate(1px,1px) }
+    80% { transform: translate(-1px,-1px) }
+    90% { transform: translate(1px,1px) }
+    to { transform: translate(1px,-1px) }
+}
+.pensivePng img{ /* i have this terrible habit of having an issue i solved already and completely forgetting i already solved it and might want to steal my own code */
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(120, 120, 120);
+}
+.pensivePng {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em 10em;
+}
+.pensivePng span{
+    color:rgb(148, 148, 148);
+    font-style:italic;
+}
+
+.quote {
+    border-left: 5px solid rgb(148, 148, 148);
+    background-color: rgb(236, 236, 236);
+    padding: 0.5em;
+    font-style:italic;
+}
+.blogcontentwoo a {
+    color: rgb(245, 129, 129); 
+    transition: all 0.2s;
+    display:inline-block;
+    text-decoration: none;
+}
+.blogcontentwoo a:hover {
+    text-shadow: 1px 1px 0px rgb(121, 63, 63);
+    translate: 0px -1px;
+    text-decoration: underline;
+}
+.small {
+    text-align: center;
+    padding: 0.5em 2.3em;
+    font-size: 0.8em;
+    line-height: 1.3em;
+    background-color: rgb(237, 235, 174);
+}   
+.funnyCSScrimes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5em 3em;
+    background-color: rgb(69, 69, 69);
+}
+.yt-iframe {
+    height:15em;
+    width:27em;
+    border-radius: 5px;
+}
+.suni-iframe{
+    height:20em;
+    width:25em;
+}
+.hardbassgifcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hardbassgif{
+    height:20em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(120, 120, 120);
+}

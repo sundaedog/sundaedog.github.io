@@ -1,0 +1,239 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(52, 52, 52, 0);
+}
+
+
+.discoballContainer {
+    font-size: 5em;
+    display:flex;
+    justify-content: center;
+    perspective:500px;
+    position:absolute;
+}
+.discoball{
+    z-index: 1;
+    animation: discoIdle 5s infinite linear;
+}
+@keyframes discoIdle{
+    0%{transform: rotateY(0deg);}
+    25%{transform: rotateY(25deg);}
+    50%{transform: rotateY(0deg);}
+    75%{transform: rotateY(-25deg);}
+    100%{transform: rotateY(0deg);}
+}
+.discoballContainer div{ /* lights */
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(0,212,255,0) 100%);
+    width: 50px;
+    height: 200px;
+    position:absolute;
+    top:4rem;
+    transform-origin: top;
+}
+.lights1 {
+    transform:rotateZ(-45deg) rotateX(50deg);
+    animation: lightsflash var(--twobeats) linear infinite;
+}
+.lights2{
+    transform:rotateZ(-30deg) rotateX(50deg);
+    animation: lightsflash var(--twobeats) linear infinite;
+    animation-delay: var(--onebeat);
+}
+.lights3{
+    transform:rotateZ(30deg) rotateX(50deg);
+    animation: lightsflash var(--twobeats) linear infinite;
+}
+.lights4{
+    transform:rotateZ(45deg) rotateX(50deg);
+    animation: lightsflash var(--twobeats) linear infinite;
+    animation-delay: var(--onebeat);
+}
+@keyframes lightsflash{
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:0;}
+}
+:root {
+    --bpm: 155;     /* PLUG IN YOUR BPM HERE LOL */
+    --onebeat: calc(60000ms/var(--bpm)); /* all these are ms */
+    --twobeats: calc(2 * var(--onebeat));
+    --threebeats: calc(3 * var(--onebeat));
+    --fourbeats: calc(4 * var(--onebeat));
+}
+.square1 {
+    grid-area: sq1;
+
+    animation: flash var(--fourbeats) linear infinite, bluesquare 5s infinite;
+    animation-delay: 0ms;
+}
+.square2 {
+    grid-area: sq2;
+
+    animation: flash var(--fourbeats) linear infinite, greensquare 5s infinite;
+    animation-delay: var(--onebeat);
+}
+.square3 {
+    grid-area: sq3;
+
+    animation: flash var(--fourbeats) linear infinite, redsquare 5s infinite;
+    animation-delay: var(--twobeats);
+}
+.square4 {
+    grid-area: sq4;
+
+    animation: flash var(--fourbeats) linear infinite, yellowsquare 5s infinite;
+    animation-delay: var(--threebeats);
+}
+.square5 {
+    grid-area: sq5;
+    animation: flash var(--fourbeats) linear infinite, redsquare 5s infinite;
+    animation-delay: var(--twobeats);
+}
+.square6 {
+    grid-area: sq6;
+    animation: flash var(--fourbeats) linear infinite, bluesquare 5s infinite;
+    animation-delay: 0ms;
+}
+.square7 {
+    grid-area: sq7;
+    animation: flash var(--fourbeats) linear infinite, yellowsquare 5s infinite;
+    animation-delay: var(--threebeats);
+}
+.square8 {
+    grid-area: sq8;
+    animation: flash var(--fourbeats) linear infinite, greensquare 5s infinite;
+    animation-delay: var(--onebeat);
+}
+.square9 {
+    grid-area: sq9;
+    animation: flash var(--fourbeats) linear infinite, yellowsquare 5s infinite;
+    animation-delay: var(--threebeats);
+}
+.square10 {
+    grid-area: sq10;
+    animation: flash var(--fourbeats) linear infinite, redsquare 5s infinite;
+    animation-delay: var(--twobeats);
+}
+.square11 {
+    grid-area: sq11;
+    animation: flash var(--fourbeats) linear infinite, greensquare 5s infinite;
+    animation-delay: var(--onebeat);
+}
+.square12 {
+    grid-area: sq12;
+    animation: flash var(--fourbeats) linear infinite, bluesquare 5s infinite;
+    animation-delay: 0ms;
+}
+.square13 {
+    grid-area: sq13;
+    animation: flash var(--fourbeats) linear infinite, yellowsquare 5s infinite;
+    animation-delay: var(--threebeats);
+}
+.square14 {
+    grid-area: sq14;
+    animation: flash var(--fourbeats) linear infinite, bluesquare 5s infinite;
+    animation-delay: 0ms;
+}
+.square15 {
+    grid-area: sq15;
+    animation: flash var(--fourbeats) linear infinite, redsquare 5s infinite;
+    animation-delay: var(--twobeats);
+}
+.square16 {
+    grid-area: sq16;
+    animation: flash var(--fourbeats) linear infinite, greensquare 5s infinite;
+    animation-delay: var(--onebeat);
+}
+
+.square-container div{ /*each square*/
+    width:50px;
+    height:50px;
+}
+.square-container{
+    display:grid;
+    grid-template-areas:
+    'sq1 sq2 sq3 sq4' 
+    'sq5 sq6 sq7 sq8' 
+    'sq9 sq10 sq11 sq12' 
+    'sq13 sq14 sq15 sq16';
+    width:200px;
+    height:200px;
+    margin-top: 8em;
+
+    border:10px solid black;
+    animation: speen 5s infinite linear;
+}
+@keyframes speen {
+    0% {
+        transform: rotateX(80deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(80deg) rotateZ(360deg);
+    }
+}
+
+@keyframes bluesquare {
+    0%{background-color: rgb(246, 146, 15);}
+    25%{background-color: rgb(208, 246, 15);}
+    50%{background-color: rgb(15, 246, 50);}
+    75%{background-color: rgb(15, 246, 246);}
+    100%{background-color: rgb(246, 146, 15);}
+}
+@keyframes greensquare {
+    0%{background-color: rgb(15, 77, 246);}
+    25%{background-color: rgb(169, 15, 246);}
+    50%{background-color: rgb(246, 15, 211);}
+    75%{background-color: rgb(246, 15, 34);}
+    100%{background-color: rgb(15, 77, 246);}
+}
+@keyframes redsquare {
+    0%{background-color: rgb(246, 15, 15);}
+    25%{background-color: rgb(246, 15, 146);}
+    50%{background-color: rgb(246, 15, 208);}
+    75%{background-color: rgb(211, 15, 246);}
+    100%{background-color: rgb(246, 15, 15);}
+}
+@keyframes yellowsquare {
+    0%{background-color: rgb(251, 255, 0);}
+    25%{background-color: rgb(179, 255, 0);}
+    50%{background-color: rgb(246, 146, 15);}
+    75%{background-color: rgb(255, 0, 0);}
+    100%{background-color: rgb(251, 255, 0);}
+}
+@keyframes flash{
+    0%{filter:brightness(1);}
+    50%{filter:brightness(0.1);}
+    100%{filter:brightness(0.1);}
+}
+
+.image{
+    perspective:1000px;
+    position:absolute;
+    top:8em;
+    height:150px;
+    width:300px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 75px;
+
+    animation: dance var(--fourbeats) steps(1, end) infinite, jump var(--onebeat) ease-in-out infinite;
+}
+@keyframes dance {
+0% {transform: rotateZ(5deg);}
+25% {transform: rotateZ(-5deg);}
+50% {transform: rotateZ(5deg);}
+75% {transform: rotateZ(-5deg);}
+100% {transform: rotateZ(5deg);}
+}
+@keyframes jump {
+    0% {translate: 0px 0px;} /* would've used transform:translatey but no worky */
+    50% {translate: 0px 5px;}
+    100% {translate: 0px 0px;}
+}

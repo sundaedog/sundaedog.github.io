@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <title>How to use discord on a tiny ass monitor</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/png" href="/assets/win11_dog_icon.png">
+</head>
+<body>
+    <div class="page">
+        <div class="intro">
+            <span class="back"><a href="/blog/">back</a></span>
+            <h1>sundaedog weblog</h1>
+            <img class="suni" src="/blog/the_creaturecrop.png" width="100">
+        </div>
+        <div class="weblogtitle">
+            <h2>How to use discord on a tiny ass monitor </h2>
+            <span title="date of publish">July 09, 2024</span>
+        </div>
+        <div class="blogcontentwoo">
+            <p>Discord HATES tiny monitors for whatever reason, so here's how i got mine working</p>
+            <p>i use discord for an uncomfortable amount of time daily, so much so that i bought a tiny monitor for it so i could play games/stream and also look down and read chat or do whatever. but for some reason discord does not like being under a certain resolution by default and all the UI gets squished. so here's how to mitigate that</p>
+            <div class="imgcontainer">
+                <img src="/blog/July09-2024/tiny monitor.jpg" alt="image of my small monitor" title="i could've turned it horizontally to be honest" width="300">
+            </div>
+            <h2>Step 1: Adjust discord settings</h2>
+            <p>In user settings, go to Appearance. Try messing with some of these settings, all of these settings already in discord can make a smaller monitor size better to look at (especially zoom level, which is necessary regardless)</p>
+            <div class="imgcontainer">
+                <img src="/blog/July09-2024/woo slider.png" alt="image of some discord sliders" width="500">
+            </div>
+            <h2>Step 1: Edit settings.json</h2>
+            <p>By default, it's in <span class="code">C:\Users\[user]\AppData\Roaming\discord\settings.json</span>. (If you can't find it, it's in the same folder where discord's cache is stored. <a href="https://github.com/BrunoS3D/discord-enable-devtools?tab=readme-ov-file#manually-enable-method-2" target="_blank">If you use a different OS, try finding it this way.</a>)</p>
+            <p>Open it with some text editor. You'll probably see something akin to this!</p>
+            <div class="codeBlockContainer">
+                <span class="codeBlock">{
+    "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true,
+    "IS_MAXIMIZED": false,
+    "IS_MINIMIZED": false,
+    "WINDOW_BOUNDS": {
+        "x": -400,
+        "y": 0,
+        "width": 200,
+        "height": 640
+    },
+    "MINIMIZE_TO_TRAY": false,
+    "OPEN_ON_STARTUP": false,
+    "debugLogging": false,
+    "MIN_WIDTH": 0,
+    "MIN_HEIGHT": 0,
+    "chromiumSwitches": {},
+    "enableHardwareAcceleration": true
+}               </span>
+            </div>
+            <p>It doesn't have to be exactly like mine, but make sure that <span class="code">"MIN_WIDTH"</span> and <span class="code">"MIN_HEIGHT"</span> are both set to 0.</p>
+            <div class="highlight"><p>By default, discord limits how small its window can be - setting these values to 0 disables that limitation, so you can put it on any resolution you like!</p></div>
+            <p>Also consider adding <span class="code">"DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true,</span> in there. It sounds intimidating, but it just allows you to use DevTools and other web keyboard shortcuts (like <span class="code">CTRL + SHIFT + I</span> ) inside the discord app</p>
+            <p>Make sure to save the file and restart discord. Check if you can squish the window as small as you want.</p>
+
+            <h2>Step 2: Install Vencord or BetterDiscord</h2>
+            <p><a href="https://vencord.dev/" target="_blank">Install Vencord here.</a> <a id="Betterdiscord" target="_blank" href="https://betterdiscord.app/">Install BetterDiscord here.</a></p>
+            <p>Both are really easy to install, just download it and go through whatever the installation wizard has to say. </p>
+            <h2>Step 3: Add some custom css</h2>
+            <p><strong id="Vencord">Vencord:</strong> put discord on your normal monitor and open User Settings. In the Vencord section chose "Themes", then open the QuickCSS File</p>
+            <p><strong id="Betterdiscord">BetterDiscord:</strong> put discord on your normal monitor and open User Settings. Open the CustomCSS Tab</p>
+            <p>Once you're in the editor, paste this! <span class="code">@import url("https://suni.me/blog/July09-2024/theme.css");</span></p>
+            <p>..that's basically it.</p>
+            <h2>Step 3.5: What is this doing? What if I don't like something?</h2>
+            <p>This does a couple of things:</p>
+            <p>The server, channel list, and settings lists are compressed into a small bar that slide out on hover. <span id="yellow">This saves a LOT of valuable screen space.</span></p>
+            <p>The toolbar (bar with search) is done in a similar way <span id="yellow">so that the channel name and part of the description is visible.</span></p>
+            <p>Timestamps have been made hidden by default and shown on hover <span id="yellow">to reduce clutter on the screen.</span></p>
+            <p>Usernames are forced to be on one line so that <span id="yellow"></span>line breaks don't take too much space.</span></p>
+            <p>Buttons on message hover have been hidden. I find that it <span id="yellow">takes up too much space</span> and right clicking the message is easier in the first place.</p>
+            <p>Vencord's "update now!" notif is now a fixed size because vw <span id="yellow">had some scaling issues.</span></p>
+            <p>The gift nitro and sticker picker buttons on the chatbar are hidden. I find that it <span id="yellow">takes up too much space</span> on the chatbar.</p>
+            <p>The rest of the buttons are hidden when you click the chatbar. It also ends up <span id="yellow">taking too much space.</span></p>
+            <h2>Step 4: ????</h2>
+            <p>That's basically it! Feel free to edit it how you please. If this thing ever breaks, try visiting <a href="https://vencord.dev/discord" target="_blank">Vencord's discord server.</a> They have more people and more know-how than I do. Or you could just poke me on discord anyways.</p>
+        </div>
+    </div>
+</body>
+</html>

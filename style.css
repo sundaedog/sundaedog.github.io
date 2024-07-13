@@ -1,0 +1,210 @@
+
+/* from navbar */
+* {  /* clear defaults and possibly make defaults */
+    padding:0;
+    margin:0;
+
+    box-sizing:border-box;
+    /* font-family: ; */
+}
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: "Metropolis";
+}
+/* end from navbar */
+
+@font-face {
+    src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
+    font-family: "Afacad";
+}
+html {
+    scrollbar-width: none;
+}
+body {
+    background: linear-gradient(145deg, #876648, #447d81, #6f8560, #934b64);
+    background-size: 1000% 1000%;
+    animation: bg-gradient 60s ease infinite;
+}
+@keyframes bg-gradient {
+    0% { background-position: 0% 27% }
+    50% { background-position: 100% 74% }
+    100% { background-position: 0% 27% }
+}
+
+
+
+/* all bubbles */
+.bubbles {
+    margin: 2em 2em 0em 2em;      /* top right bottom left */
+    display: flex;      /* so that image is side by side */
+    flex-direction: row;   
+    justify-content: space-between; /* justify image right */
+    color: #eaebdd;
+}
+
+.text-bubbles { 
+    font-family: "Afacad", monospace;
+    margin-right: 2em;
+}
+.text-bubbles > div { /* applies to ONLY divs inside of .text-bubbles and ignores any children of those divs */
+    margin-bottom: 1em;
+    background-color: rgb(66, 66, 66);
+    border: 3px solid rgb(41, 41, 41);
+    border-radius: 1em;
+    overflow:hidden; /* fixes some clipping issues */
+}
+h2 {
+    padding: 0 0.2em;
+    border-image: linear-gradient(45deg, rgba(41, 41, 41, 0.66), rgba(0, 0, 255, 0), rgba(0, 0, 255, 0), rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) 1;
+    border-bottom: 3px solid;
+}
+
+
+
+
+/* about me stuff. imma be completely honest, i have no clue how i figured out any of this */
+.about-me-banner{   /* top of the bubble */
+    font-size:1.5em;
+    font-family: "Afacad", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(117, 117, 117);
+    background-image: repeating-linear-gradient(
+    160deg,
+    #efb57e,
+    #efb57e 60px,
+    #7de7ec 60px,
+    #7de7ec 120px,
+    #c3eba9 120px,
+    #c3eba9 180px,
+    #ff7fac 180px,
+    #ff7fac 240px
+    );
+    -webkit-text-stroke: 1.5px black;
+    border-bottom: 3px solid rgb(41, 41, 41);
+}
+.about-me-banner small{ /* small text in the about me banner */
+    -webkit-text-stroke: 1px black;
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: #c0c1b6;
+}
+.about-me-text{ /* main text of the about me */
+    font-size:1.4em;
+}
+.about-me-text p {
+    padding: 0.2em 1em; /* space out p */
+}
+
+
+
+.rainbow { /* gay text woo */
+    animation: rainbow 3s ease infinite;
+}
+@keyframes rainbow {
+    0%   {color: #edc9a7}
+    25%  {color: #a8e6ea}
+    50%  {color:#c3eba9}
+    75%  {color:#f8b7ce}
+    100%  {color:#edc9a7}
+}
+
+
+
+.contact {  /* the whole bubble */
+    border-radius: 1em;
+    overflow:hidden; 
+    font-size:1.4em;
+}
+.contact p, .contact-links {
+    padding: 0.2em 1em;
+}
+.contact-links{
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+.contact-links a { /* this is where discord is */
+    background-color: rgb(41, 41, 41); /*background: linear-gradient(60deg, #7289DA, #b6bfdc); or something*/
+    border: 3px solid rgb(41, 41, 41);
+    border-radius: 0.4em;
+    text-decoration: none;
+    color:#7289DA;
+    transition: 0.2s;
+}
+.contact-links a:hover{
+    text-shadow: 0px 0px 10px #7289DA;
+}
+.contactpng{ /* discord png */
+    max-width: 0.8em;
+    margin: 0 0.2em;
+}
+
+
+.site-stuff {
+    font-size:1.4em;
+}
+.site-stuff p {
+    padding: 0.2em 1em; /* space out p */
+}
+.hrefs {
+    color: #f97f7f;
+    /*background-color: rgb(41, 41, 41); 
+    border: 1px solid rgb(41, 41, 41);*/
+    border-radius: 0.4em;
+    text-decoration: underline;
+    transition: 0.1s;
+    display:inline-block;
+}
+.hrefs:hover{
+    text-shadow: 2px 2px 0px #000000;
+    translate: 0px -2px;
+}
+
+.buttons {
+    font-size:1.4em;
+}
+.buttons h2 {
+    border-bottom: none;
+}
+.clickable-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(41, 41, 41, 0.66);
+    image-rendering: pixelated;
+}
+.clickable-buttons a{
+    display:flex;
+    transition: 0.1s;
+}
+.clickable-buttons:hover > a{
+    filter:brightness(0.5);
+}
+.clickable-buttons:hover > a:hover{
+    filter:brightness(1);
+}
+
+
+.image-bubbles div { /* i have no clue how i did this ????? */
+    border: 3px solid rgb(41, 41, 41);
+    background-color: rgb(66, 66, 66);
+    border-radius: 1em;
+    font-family: "Afacad", monospace;
+    font-style:italic;
+    color: #eaebdd;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;  /* PLEASE DO NOT PUT ANOTHER DIV INSIDE IMAGE-BUBBLES. THIS WILL HAVE TO BE REWRITTEN PROBABLY. JUST KEEP ALL THE IMAGES THE SAME STYLING  .      GOD */
+}
+.image-bubbles p{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: rgb(41, 41, 41);
+}

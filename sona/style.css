@@ -1,0 +1,187 @@
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: "Metropolis";
+}
+@font-face {
+    src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
+    font-family: "Afacad";
+}
+body {
+    background-size: 4em 4em;
+    background-image: /* tint */
+                      linear-gradient(to top, rgba(129, 129, 129, 0.75), rgba(129, 129, 129, 0.75)),
+                      /* checkered */
+                      linear-gradient(to right, black 50%, white 50%),
+                      linear-gradient(to bottom, black 50%, white 50%);
+    background-blend-mode: normal, difference, normal;
+    animation: moveGrid 6s linear infinite;
+} /* todo: try to understand wtf is going on in here */
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -4em -4em;
+    }
+}   
+
+.top-container {
+    font-family: "Metropolis";
+    color:rgb(71, 71, 71);
+    background-color:white;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 1em 10em;
+    overflow:hidden;
+
+    display:grid;
+    grid-template-areas: 
+        "title title"
+        "about colors";
+    grid-template-columns: 1fr 1fr; /* adjusting the width of the columns */
+    
+}
+.title {
+    grid-area: title;
+    border-bottom: 3px solid black;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:2em;
+    overflow:hidden;
+    
+}
+.title a{ /* back button*/
+    position:absolute;
+    background-color: rgb(209, 209, 209);
+    border: 2px solid black;
+    border-radius: 0.4em;
+    text-decoration: none;
+    color:rgb(71, 71, 71);
+    overflow:hidden;
+    margin: 0 0.5em;
+    padding:0.1em;
+    transition: 0.1s;
+}
+.title a:hover{
+    text-shadow: 0px 0px 10px rgb(120, 120, 120);
+    padding:0.2em;
+}
+
+
+.title h1{
+    margin: auto;
+    font-weight: bold;
+    font-size: 2em; /*this actually does nothing (in edge/chrome), i just want to reinforce the font size*/
+}
+@keyframes spin {
+    0% {
+        transform: rotate3d(1,1,1,0)
+    }
+
+    to {
+        transform: rotate3D(1,1,1,360deg)
+    }
+}
+.about {
+    grid-area: about;
+    border-right:1.5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.about h2, .colors h2{
+    margin: 0em 0.25em;
+}
+.about p, .colors p{
+    margin: 0em 0.5em; /*horiz*/
+    font-size: 0.9em;
+}
+
+.colors {
+    border-left:1.5px solid black;
+    display:grid;
+    grid-template-areas: 
+        "color-desc color-text";
+    grid-template-columns: 1fr 1fr; /* not sure if nested grids were a good idea here - probably not - but at the same time i also want this element inside the whole colors thingy so uhhh. No change */
+}
+/* a day later; RAAAAHH I HATE THIS GRID THINGY. I DON'T LIKE HAVING IT BE NESTED */
+.color-desc{
+    grid-area: color-desc;
+    display: flex;
+    flex-direction: column;
+}
+.color-text{
+    grid-area: color-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.color-text span{
+    font-weight: bold;
+}
+.color17BEBB {
+    background-color: #17BEBB;
+    color:white;
+}
+.colorD81E5B {
+    background-color: #D81E5B;
+    color:white;
+}
+.colorF0544F {
+    background-color: #F0544F;
+    color:white;
+}
+.colorBCE784 {
+    background-color: #BCE784;
+}
+.colorFBF5F3 {
+    background-color: #FBF5F3;
+}
+.colorE3D3E4 {
+    background-color: #E3D3E4;
+}
+
+
+
+
+.images {
+    font-family: "Afacad";
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /*wrapping 🎤🎤 has to be on the parent*/
+}
+.images div{
+    background-color: white;
+    /*border-radius: 5px;*/ 
+    /* no border :c */
+    padding-bottom: 0;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.images span{
+    background-color: #d4d4d4;
+    display:flex;
+    justify-content: center;
+}
+.images a { /* gay text woo */
+    animation: purp 5s ease infinite;
+    transition:all 0.2s;
+}
+.images a:hover{
+    text-shadow: 1px 1px 1px rgb(72 72 72 / 50%);
+    translate: 0px -1px;
+}
+@keyframes purp {
+    0%   {color: #d7a7ed}
+    50%  {color:#8e309c}
+    100%  {color:#d7a7ed}
+}
+
+@media screen and (max-width: 856px) { /* change stuff when the screen is smaller */
+    .top-container {
+        margin:0;
+    }
+}
+
