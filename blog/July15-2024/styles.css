@@ -1,0 +1,216 @@
+body {
+    background-size: 4em 4em;
+    background-image: /* tint */
+                      linear-gradient(to top, rgba(129, 129, 129, 0.75), rgba(129, 129, 129, 0.75)),
+                      /* checkered */
+                      linear-gradient(to right, rgb(0, 0, 0) 50%, white 50%),
+                      linear-gradient(to bottom, black 50%, white 50%);
+    background-blend-mode: normal, difference, normal;
+    animation: moveGrid 6s linear infinite;
+} /* todo: try to understand wtf is going on in here */
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -4em -4em;
+    }
+}   
+@font-face {
+    src: url(/assets/fonts/Metropolis-SemiBold.otf);
+    font-family: "Metropolis";
+}
+@font-face {
+    src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
+    font-family: "Afacad";
+}
+@font-face {
+    src: url(/assets/fonts/MonaspaceNeonVarVF[wght\,wdth\,slnt].ttf);
+    font-family: "Neon";
+}
+
+:root{
+    --title-bg-color: rgb(163, 59, 255);
+}
+.page {
+    font-family: "Metropolis";
+    color:rgb(71, 71, 71);
+    background-color:white;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 1em 10em;
+    overflow:hidden;
+}
+.intro{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(206, 206, 206);
+    border-bottom: 3px solid black;
+}
+.intro a{ /* back button*/
+    background-color: rgb(168, 168, 168);
+    border-radius: 5px;
+    text-decoration: none;
+    color:rgb(71, 71, 71);
+    overflow:hidden;
+    margin-left: 0.3em;
+    padding:0.1em;
+    transition: 0.1s;
+    font-size: 0.8em;
+}
+.intro a:hover{
+    text-shadow: 0px 0px 10px rgb(120, 120, 120);
+    padding:0.2em;
+}
+.suni {
+    width:5em;
+}
+.back {
+    margin:0;
+    font-size: 2em;
+}
+.weblogtitle { /* name of weblog */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--title-bg-color); /* you can change this :3 silly */
+    font-size: 1.3em;
+    padding: 0.3em 0.3em;
+}
+h1 {
+    margin:0;
+    font-size: 4em;
+}
+h2 {
+    margin:0;
+}
+h2:not(.weblogtitle h2) {
+    margin-top: 1.5em;
+}
+.blogcontentwoo p {
+    margin: 0.5em 1.5em;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    white-space: pre-wrap;
+}
+.blogcontentwoo h2 {
+    border-image: linear-gradient(45deg, rgba(41, 41, 41, 0.66), rgba(0, 0, 255, 0), rgba(0, 0, 255, 0)) 1;
+    border-bottom: 3px solid;
+    font-size: 1.5em;
+    padding:0 0.3em;
+}
+@media screen and (max-width: 1111px) { /* change stuff when the screen is smaller */
+    h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 960px) { 
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media screen and (max-width: 856px) { 
+    .page {
+        margin: 1em 0em;
+    }
+}
+@media screen and (max-width: 773px) { 
+    .suni {
+        display:none;
+    }
+}
+.blogcontentwoo a {
+    color: rgb(245, 129, 129); 
+    transition: all 0.2s;
+    display:inline-block;
+
+}
+.blogcontentwoo a:hover {
+    text-shadow: 1px 1px 0px rgb(109, 109, 109);
+    translate: 0px -1px;
+}
+.blogcontentwoo img:not(.emoteJumbo, .emote) {
+	border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(120, 120, 120);
+}
+.code, .codeBlock {
+    font-family: "Neon", monospace;
+    font-weight: 100;
+    font-size: 0.9em;
+    color:rgb(255, 255, 255);
+    background-color:rgb(55, 56, 67);
+    border: 2px solid rgb(93, 94, 112);
+    border-radius: 5px;
+    overflow:hidden;
+    padding: 0em 0.2em;
+    word-break: break-all;
+}
+.codeBlock {
+    display:inline-block;
+    white-space: pre-wrap;
+}
+.codeBlockContainer {
+    display:flex;
+    justify-content: center;
+}
+.imgcontainer{
+    display:flex;
+    justify-content: center;
+}
+
+.emoteJumbo{
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1.75em;
+}
+.emote {
+    width: 1.375rem;
+    height: 1.375rem;
+    vertical-align: middle;
+    translate: 0px -1.5px; /* yeah i know this is jank. if anyone can fix this that would be awesome */
+}
+.emote, .emoteJumbo{
+    transition: all 0.3s;
+    object-fit: contain;
+}
+.emote:hover, .emoteJumbo:hover{
+    transform: scale(1.2);
+    border: 1px solid black;
+    box-shadow: 1px 1px 0px black;
+}
+
+.blurcontainer{
+    display:flex;
+    position:relative;
+    background-color: rgb(224, 224, 224);
+}
+.blurcontent{
+    transition: all 1s;
+    filter:blur(6px);
+}
+.bluroverlay{
+    transition: all 1s;
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    z-index: 1;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    font-size: 1.5em;
+    cursor:default;
+    width:100%;
+}
+.bluroverlay span{
+    color:white;
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+.blurcontainer:hover .blurcontent{
+    filter:blur(0px);
+}
+.blurcontainer:hover .bluroverlay{
+    opacity: 0;
+}
