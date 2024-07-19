@@ -30,7 +30,7 @@ body {
 }
 
 :root{
-    --title-bg-color: rgb(163, 59, 255);
+    --title-bg-color: rgb(213, 255, 59);
 }
 .page {
     font-family: "Metropolis";
@@ -127,8 +127,8 @@ video {
 }
 /* emotes */
 /* 
-    <img src="/assets/emotes/narpySpin.gif" class="emoteJumbo" alt="narpySpin" title="narpySpin">
-    <img src="/assets/emotes/narpySpin.gif" class="emote" alt="narpySpin" title="narpySpin">
+    (not inline) <img src="/assets/emotes/narpySpin.gif" class="emoteJumbo" alt="narpySpin" title="narpySpin">
+    (inline)     <img src="/assets/emotes/narpySpin.gif" class="emote" alt="narpySpin" title="narpySpin">
 */
 .emoteJumbo{ 
     width: 3rem;
@@ -147,6 +147,7 @@ video {
 }
 .emote:hover, .emoteJumbo:hover{
     transform: scale(1.2);
+    background-color: white;
     border: 1px solid black;
     box-shadow: 1px 1px 0px black;
 }
@@ -227,6 +228,30 @@ and you can put it in codeBlockContainer to center it</span>
 }
 .blurcontainer:hover .bluroverlay{
     opacity: 0;
+}
+/* just give a span class="shake" */
+.shake {
+    animation: shake 0.5s infinite;
+    display: inline-block;
+    font-style: italic;
+}
+@keyframes shake { /* thanks niko lol */
+    0% { transform: translate(1px,1px) }
+    10% { transform: translate(-1px,-1px) }
+    20% { transform: translate(-1px) }
+    30% { transform: translate(1px,1px) }
+    40% { transform: translate(1px,-1px) }
+    50% { transform: translate(-1px,2px) }
+    60% { transform: translate(-1px,1px) }
+    70% { transform: translate(1px,1px) }
+    80% { transform: translate(-1px,-1px) }
+    90% { transform: translate(1px,1px) }
+    to { transform: translate(1px,-1px) }
+}
+/* just give a span class="small" */
+.small {
+    font-size: 0.6em;
+    color:grey;
 }
 /* responsive stuff start */
 @media screen and (max-width: 1111px) { /* change stuff when the screen is smaller */
